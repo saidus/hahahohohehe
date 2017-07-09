@@ -1,0 +1,41 @@
+<?php ob_start(); $title='login';?>
+<div class="login_wrapper">
+    <div class="animate form login_form">
+        <section class="login_content">
+            <form method="post">
+                <input type="hidden" name="cserf_token" value="fgkjdklgj8938340590" />
+                <h1>Login Form</h1>
+                <div>
+                    <input name="username" type="text" class="form-control" placeholder="Username" required="">
+                </div>
+                <div>
+                    <input name="password" type="password" class="form-control" placeholder="Password" required="">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-default submit">Log in</button>
+                    <a class="reset_pass" href="<?php echo url('forgot-password'); ?>">Lost your password?</a>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="separator">
+                    <p class="change_link">New to site?
+                        <a href="<?php echo url('register'); ?>" class="to_register"> Create Account </a>
+                    </p>
+
+                    <div class="clearfix"></div>
+                    <br>
+
+                    <div>
+                        <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                        <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+<?php $content = ob_get_clean();
+ob_end_clean();
+require(VIEW_DIR . DS . 'admin' . DS . 'layouts' . DS . 'master.phtml');
